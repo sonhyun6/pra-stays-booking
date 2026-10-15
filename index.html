@@ -4,81 +4,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PR&A STAYS | Book Your Stay</title>
-<meta name="description" content="Discover a comfortable stay at PR&A STAYS. Explore rooms and plan your visit.">
+<title>PR&A STAYS | Direct Booking</title>
+<meta name="description" content="Book your stay directly with PR&A STAYS. Explore our opening promotion.">
 <style>
-:root {
-  --green: #204638;
-  --cream: #f7f5ef;
-  --gold: #c6a66b;
-  --ink: #24342d;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-}
-header {
-  padding: 22px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-}
-.brand { font-size: 23px; font-weight: 800; color: var(--green); }
-header a { color: var(--green); text-decoration: none; font-weight: 700; }
-.hero {
-  background: var(--green);
-  color: white;
-  padding: 65px 7% 75px;
-}
-.hero-inner { max-width: 900px; margin: auto; }
-.eyebrow { color: #e3c990; letter-spacing: 3px; font-size: 12px; }
-h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1.05; margin: 18px 0; }
-.hero p { line-height: 1.7; max-width: 520px; color: #e4ebe5; }
-main { max-width: 1080px; margin: auto; padding: 36px 20px 65px; }
-h2 { font-size: 30px; }
-.search, .panel {
-  background: white; padding: 24px; border-radius: 14px;
-  box-shadow: 0 5px 22px #182d1910; margin-bottom: 35px;
-}
-.fields {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 14px; align-items: end;
-}
-label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
-input, select {
-  width: 100%; padding: 12px; border: 1px solid #d5ddd6;
-  border-radius: 8px; background: white; color: var(--ink);
-}
-button, .button {
-  display: inline-block; background: var(--green); color: white;
-  border: 0; border-radius: 8px; padding: 13px 18px;
-  cursor: pointer; text-decoration: none; font-weight: 700;
-}
-button:hover, .button:hover { background: #315f4b; }
-.rooms {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-}
-.room {
-  background: white; border-radius: 14px; overflow: hidden;
-  box-shadow: 0 5px 22px #182d190b;
-}
-.room img { width: 100%; height: 190px; object-fit: cover; display: block; }
-.room-content { padding: 18px; }
-.room h3 { margin: 0 0 10px; }
-.muted { color: #65736a; font-size: 14px; line-height: 1.6; }
-.price { font-size: 20px; font-weight: 800; color: var(--green); margin: 15px 0; }
-.notice { background: #f5f0e4; padding: 14px; border-radius: 8px; font-size: 13px; line-height: 1.6; }
-footer { background: #18372b; color: white; padding: 30px 7%; line-height: 1.8; }
-footer a { color: #e3c990; }
-@media(max-width:700px) {
-  .fields, .rooms { grid-template-columns: 1fr; }
-  .hero { padding-top: 45px; }
-  header { padding: 18px 5%; }
-}
+:root{--green:#204638;--cream:#f7f5ef;--gold:#c6a66b;--ink:#24342d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}
+header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;background:white}
+.brand{font-size:23px;font-weight:800;color:var(--green)}
+a{color:var(--green);text-decoration:none;font-weight:bold}
+.hero{background:var(--green);color:white;padding:65px 7% 75px}
+.hero-inner{max-width:950px;margin:auto}
+.eyebrow{color:#e3c990;letter-spacing:3px;font-size:12px}
+h1{font-size:clamp(38px,7vw,66px);line-height:1.05;margin:18px 0}
+.hero p{line-height:1.7;max-width:540px;color:#e4ebe5}
+main{max-width:1080px;margin:auto;padding:35px 20px 65px}
+h2{font-size:30px}
+.panel,.room{background:white;border-radius:14px;box-shadow:0 5px 22px #182d1910}
+.panel{padding:24px;margin-bottom:32px}
+.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.room{overflow:hidden}
+.room img{width:100%;height:230px;object-fit:cover;display:block}
+.room-content{padding:20px}
+.muted{color:#65736a;font-size:14px;line-height:1.6}
+.price{font-size:27px;font-weight:800;color:var(--green);margin:14px 0}
+.old-price{text-decoration:line-through;color:#788078;font-size:16px;font-weight:normal;margin-right:8px}
+.promo{display:inline-block;background:#f5ead0;color:#71531d;border-radius:20px;padding:7px 11px;font-size:12px;font-weight:bold}
+button,.button{display:inline-block;background:var(--green);color:white;border:0;border-radius:8px;padding:13px 18px;cursor:pointer;font-weight:bold}
+button:disabled{opacity:.5;cursor:not-allowed}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+label{display:block;font-size:13px;font-weight:bold;margin:12px 0 7px}
+input,select{width:100%;padding:12px;border:1px solid #d5ddd6;border-radius:8px;background:white;color:var(--ink)}
+.notice{background:#f5f0e4;padding:14px;border-radius:8px;font-size:13px;line-height:1.6;margin:15px 0}
+#message{margin-top:16px;line-height:1.6;overflow-wrap:anywhere}
+footer{background:#18372b;color:white;padding:30px 7%;line-height:1.8}
+@media(max-width:650px){.rooms,.fields{grid-template-columns:1fr}.hero{padding-top:45px}header{padding:18px 5%}}
 </style>
 </head>
 <body>
@@ -91,136 +51,293 @@ footer a { color: #e3c990; }
   <div class="hero-inner">
     <div class="eyebrow">YOUR HOME AWAY FROM HOME</div>
     <h1>Stay comfortably.<br>Feel at home.</h1>
-    <p>Find a welcoming space for your next visit.
-       Explore our accommodations and plan your stay directly with PR&A STAYS.</p>
-    <a class="button" href="#booking">Plan your stay</a>
+    <p>Book directly with PR&A STAYS and enjoy our special opening promotion.</p>
+    <a class="button" href="#rooms">Explore our rooms</a>
   </div>
 </section>
 
 <main>
-  <section id="booking" class="search">
-    <h2>Find your stay</h2>
-    <p class="muted">Choose your dates to estimate your accommodation cost.</p>
-    <div class="fields">
-      <div>
-        <label for="checkin">Check-in</label>
-        <input id="checkin" type="date">
-      </div>
-      <div>
-        <label for="checkout">Check-out</label>
-        <input id="checkout" type="date">
-      </div>
-      <div>
-        <label for="guests">Guests</label>
-        <select id="guests">
-          <option value="1">1 guest</option>
-          <option value="2" selected>2 guests</option>
-          <option value="3">3 guests</option>
-          <option value="4">4 guests</option>
-          <option value="5">5 guests</option>
-        </select>
-      </div>
-    </div>
-    <p style="margin-bottom:0">
-      <button id="searchBtn" type="button">Calculate stay</button>
-    </p>
-    <div id="result" aria-live="polite"></div>
-  </section>
-
   <section id="rooms">
-    <h2>Explore our rooms</h2>
-    <p class="muted">Comfortable spaces for your next trip.</p>
-    <div class="rooms">
-      <article class="room">
-        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Comfortable bedroom">
-        <div class="room-content">
-          <h3>Cozy Room</h3>
-          <p class="muted">A welcoming space for solo travelers or couples.</p>
-          <div class="price">Set your rate</div>
-          <button type="button" onclick="chooseRoom('Cozy Room')">Select room</button>
-        </div>
-      </article>
-      <article class="room">
-        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Modern apartment interior">
-        <div class="room-content">
-          <h3>Comfort Room</h3>
-          <p class="muted">A relaxing room for a comfortable visit.</p>
-          <div class="price">Set your rate</div>
-          <button type="button" onclick="chooseRoom('Comfort Room')">Select room</button>
-        </div>
-      </article>
-      <article class="room">
-        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Bright living space">
-        <div class="room-content">
-          <h3>Premium Room</h3>
-          <p class="muted">Extra space to unwind during your stay.</p>
-          <div class="price">Set your rate</div>
-          <button type="button" onclick="chooseRoom('Premium Room')">Select room</button>
-        </div>
-      </article>
+    <h2>Our rooms</h2>
+    <p class="muted">Opening promotion: save ₱500 per night per room.</p>
+    <div id="roomList" class="rooms">
+      <p>Loading rooms…</p>
     </div>
   </section>
 
-  <section class="panel" style="margin-top:35px">
-    <h2>Interested in staying with us?</h2>
-    <p class="muted">Our online booking and payment system is being prepared.
-       Availability and prices must be confirmed before a reservation is accepted.</p>
-    <div class="notice">
-      This is an initial website prototype. It does not yet reserve rooms,
-      process payments, or confirm availability. No payment should be sent
-      through this page.
-    </div>
+  <section id="booking" class="panel" style="margin-top:35px">
+    <h2>Request a booking</h2>
+    <p class="muted">Choose a room and your dates. Your reservation is not confirmed until our team approves it.</p>
+
+    <form id="bookingForm">
+      <label for="room">Room</label>
+      <select id="room" required>
+        <option value="">Loading rooms…</option>
+      </select>
+
+      <div class="fields">
+        <div>
+          <label for="checkin">Check-in</label>
+          <input id="checkin" type="date" required>
+        </div>
+        <div>
+          <label for="checkout">Check-out</label>
+          <input id="checkout" type="date" required>
+        </div>
+        <div>
+          <label for="guests">Number of guests</label>
+          <select id="guests" required>
+            <option value="1">1 guest</option>
+            <option value="2" selected>2 guests</option>
+          </select>
+        </div>
+        <div>
+          <label for="guestName">Full name</label>
+          <input id="guestName" maxlength="150" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="guestEmail">Email address</label>
+          <input id="guestEmail" type="email" maxlength="254" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="guestPhone">Phone number</label>
+          <input id="guestPhone" type="tel" maxlength="40" autocomplete="tel">
+        </div>
+      </div>
+
+      <label for="payment">Preferred payment method</label>
+      <select id="payment" required>
+        <option value="manual">Manual transfer (instructions after review)</option>
+        <option value="online" disabled>Online payment gateway — coming soon</option>
+      </select>
+
+      <div id="estimate" class="notice">Select a room and dates to estimate your stay.</div>
+      <div class="notice">
+        This is a booking request, not a confirmed reservation. Do not send payment until PR&A STAYS provides instructions. Online payments are not enabled yet.
+      </div>
+      <button id="submitBtn" type="submit">Submit booking request</button>
+      <div id="message" role="status" aria-live="polite"></div>
+    </form>
   </section>
 </main>
 
 <footer>
   <strong>PR&A STAYS</strong><br>
   Your home away from home.<br>
-  Philippines<br>
-  <span style="font-size:12px;color:#d5e0d7">
-    Contact information and property details will be added before launch.
-  </span>
+  Philippines
 </footer>
 
-<script>
+<script type="module">
+import { createClient } from
+  'https://esm.sh/@supabase/supabase-js@2';
+
+// Replace these two placeholders with your Supabase project values.
+const SUPABASE_URL = 'https://umuherrqnnekkzujnzlv.supabase.co/rest/v1/';
+const SUPABASE_KEY = 'sb_publishable_rQfO3eWvZA3wvm3vcXQmnA_k9XZIcWV';
+
+const roomList = document.getElementById('roomList');
+const roomSelect = document.getElementById('room');
 const checkin = document.getElementById('checkin');
 const checkout = document.getElementById('checkout');
-const result = document.getElementById('result');
+const guests = document.getElementById('guests');
+const estimate = document.getElementById('estimate');
+const message = document.getElementById('message');
+const submitBtn = document.getElementById('submitBtn');
+const form = document.getElementById('bookingForm');
+
+const configured =
+  !SUPABASE_URL.includes('YOUR_') &&
+  !SUPABASE_KEY.includes('YOUR_');
+
+let supabase;
+let rooms = [];
+
 const today = new Date();
-const localDate = d => {
-  const y = d.getFullYear();
-  const m = String(d.getMonth()+1).padStart(2,'0');
-  const day = String(d.getDate()).padStart(2,'0');
-  return `${y}-${m}-${day}`;
-};
+const localDate = d =>
+  `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
 checkin.min = localDate(today);
 checkout.min = localDate(today);
 
-checkin.addEventListener('change', () => {
-  checkout.min = checkin.value || localDate(today);
-  if (checkout.value && checkout.value <= checkin.value) {
-    checkout.value = '';
-  }
-});
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;',
+    '"':'&quot;',"'":'&#39;'
+  })[c]);
+}
 
-function chooseRoom(name) {
-  result.innerHTML = '<p><strong>' + name +
-    '</strong> selected. Choose your dates and calculate your stay below.</p>';
+function selectedRoom() {
+  return rooms.find(r => r.id === roomSelect.value);
+}
+
+function updateGuestOptions() {
+  const room = selectedRoom();
+  const max = Number(room?.max_guests || 2);
+  const previous = Number(guests.value || 1);
+  guests.replaceChildren();
+  for (let n = 1; n <= max; n++) {
+    const option = document.createElement('option');
+    option.value = String(n);
+    option.textContent = `${n} guest${n > 1 ? 's' : ''}`;
+    guests.append(option);
+  }
+  guests.value = String(Math.min(previous, max));
+}
+
+function updateEstimate() {
+  const room = selectedRoom();
+  if (!room || !checkin.value || !checkout.value ||
+      checkout.value <= checkin.value) {
+    estimate.textContent = 'Select a room and valid dates to estimate your stay.';
+    return;
+  }
+
+  const nights = Math.round(
+    (Date.parse(checkout.value+'T00:00:00Z') -
+     Date.parse(checkin.value+'T00:00:00Z')) / 86400000
+  );
+  const total = nights * Number(room.nightly_rate);
+  estimate.textContent =
+    `${nights} night(s) × ₱${Number(room.nightly_rate).toLocaleString('en-PH')} = estimated ₱${total.toLocaleString('en-PH')}. Final price and availability require review.`;
+}
+
+function chooseRoom(id) {
+  roomSelect.value = id;
+  updateGuestOptions();
+  updateEstimate();
   document.getElementById('booking').scrollIntoView({behavior:'smooth'});
 }
 
-document.getElementById('searchBtn').addEventListener('click', () => {
-  if (!checkin.value || !checkout.value || checkout.value <= checkin.value) {
-    result.textContent = 'Please select a valid check-in and check-out date.';
+async function loadRooms() {
+  const { data, error } = await supabase
+    .from('rooms')
+    .select('id,name,description,nightly_rate,original_rate,promo_label,promo_active,max_guests,image_url')
+    .eq('is_active', true)
+    .order('name');
+
+  if (error) throw error;
+  rooms = data || [];
+
+  if (!rooms.length) {
+    roomList.textContent = 'No rooms are currently listed. Please contact us.';
+    roomSelect.innerHTML = '<option value="">No rooms available</option>';
     return;
   }
-  const nights = Math.round(
-    (new Date(checkout.value+'T00:00:00') -
-     new Date(checkin.value+'T00:00:00')) / 86400000
-  );
-  result.textContent = `Your selected dates are ${nights} night(s). This prototype cannot yet verify room availability or calculate a confirmed total.`;
+
+  roomList.innerHTML = rooms.map(r => `
+    <article class="room">
+      ${r.image_url ? `<img src="${escapeHtml(r.image_url)}" alt="${escapeHtml(r.name)}">` : ''}
+      <div class="room-content">
+        ${r.promo_active ? `<span class="promo">${escapeHtml(r.promo_label || 'Opening Promo')}</span>` : ''}
+        <h3>${escapeHtml(r.name)}</h3>
+        <p class="muted">${escapeHtml(r.description || 'A comfortable stay at PR&A STAYS.')}</p>
+        <div class="price">
+          ${r.promo_active && r.original_rate
+            ? `<span class="old-price">₱${Number(r.original_rate).toLocaleString('en-PH')}</span>`
+            : ''}
+          ₱${Number(r.nightly_rate).toLocaleString('en-PH')}<span style="font-size:14px;font-weight:normal"> / night</span>
+        </div>
+        ${r.promo_active && r.original_rate
+          ? `<p class="muted">Save ₱${(Number(r.original_rate)-Number(r.nightly_rate)).toLocaleString('en-PH')} per night</p>`
+          : ''}
+        <button type="button" data-room-id="${escapeHtml(r.id)}">Select room</button>
+      </div>
+    </article>
+  `).join('');
+
+  roomList.querySelectorAll('button[data-room-id]').forEach(button => {
+    button.addEventListener('click', () => chooseRoom(button.dataset.roomId));
+  });
+
+  roomSelect.innerHTML = rooms.map(r =>
+    `<option value="${escapeHtml(r.id)}">${escapeHtml(r.name)} — ₱${Number(r.nightly_rate).toLocaleString('en-PH')}/night</option>`
+  ).join('');
+
+  updateGuestOptions();
+  updateEstimate();
+}
+
+roomSelect.addEventListener('change', () => {
+  updateGuestOptions();
+  updateEstimate();
 });
+checkin.addEventListener('change', () => {
+  checkout.min = checkin.value || localDate(today);
+  if (checkout.value && checkout.value <= checkin.value) checkout.value = '';
+  updateEstimate();
+});
+checkout.addEventListener('change', updateEstimate);
+
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  message.textContent = '';
+
+  const room = selectedRoom();
+  if (!room) {
+    message.textContent = 'Please select a room.';
+    return;
+  }
+  if (!checkin.value || !checkout.value || checkout.value <= checkin.value) {
+    message.textContent = 'Please select valid check-in and check-out dates.';
+    return;
+  }
+  if (checkin.value < localDate(new Date())) {
+    message.textContent = 'Check-in cannot be in the past.';
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting…';
+
+  try {
+    const { data, error } = await supabase.rpc('submit_booking_request', {
+      p_room_id: room.id,
+      p_guest_name: document.getElementById('guestName').value.trim(),
+      p_guest_email: document.getElementById('guestEmail').value.trim(),
+      p_guest_phone: document.getElementById('guestPhone').value.trim() || null,
+      p_check_in: checkin.value,
+      p_check_out: checkout.value,
+      p_guests: Number(guests.value),
+      p_payment_method: 'manual'
+    });
+
+    if (error) throw error;
+
+    const booking = Array.isArray(data) ? data[0] : data;
+    if (!booking?.booking_id) {
+      throw new Error('The request was not returned. Please contact PR&A STAYS.');
+    }
+
+    message.textContent =
+      `Booking request submitted. Reference: ${booking.booking_id}. Estimated full-stay amount: ₱${Number(booking.amount_due).toLocaleString('en-PH')}. Your request is pending review and is not confirmed. Please wait for PR&A STAYS to contact you with payment instructions.`;
+    form.reset();
+    checkin.min = localDate(new Date());
+    checkout.min = checkin.min;
+    updateGuestOptions();
+    updateEstimate();
+  } catch (error) {
+    console.error(error);
+    message.textContent =
+      'We could not submit your request. The dates may be unavailable, or the booking service may need configuration. Please try again later or contact PR&A STAYS.';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit booking request';
+  }
+});
+
+if (!configured) {
+  roomList.textContent = 'Website setup is incomplete. Supabase connection details are needed.';
+  roomSelect.innerHTML = '<option value="">Connection not configured</option>';
+  message.textContent = 'The booking form is not active yet.';
+  submitBtn.disabled = true;
+} else {
+  supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+  loadRooms().catch(error => {
+    console.error(error);
+    roomList.textContent = 'Rooms could not be loaded. Please try again later.';
+    roomSelect.innerHTML = '<option value="">Unable to load rooms</option>';
+  });
+}
 </script>
 </body>
 </html>
-

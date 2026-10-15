@@ -1,1 +1,226 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PR&A STAYS | Book Your Stay</title>
+<meta name="description" content="Discover a comfortable stay at PR&A STAYS. Explore rooms and plan your visit.">
+<style>
+:root {
+  --green: #204638;
+  --cream: #f7f5ef;
+  --gold: #c6a66b;
+  --ink: #24342d;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+header {
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+.brand { font-size: 23px; font-weight: 800; color: var(--green); }
+header a { color: var(--green); text-decoration: none; font-weight: 700; }
+.hero {
+  background: var(--green);
+  color: white;
+  padding: 65px 7% 75px;
+}
+.hero-inner { max-width: 900px; margin: auto; }
+.eyebrow { color: #e3c990; letter-spacing: 3px; font-size: 12px; }
+h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1.05; margin: 18px 0; }
+.hero p { line-height: 1.7; max-width: 520px; color: #e4ebe5; }
+main { max-width: 1080px; margin: auto; padding: 36px 20px 65px; }
+h2 { font-size: 30px; }
+.search, .panel {
+  background: white; padding: 24px; border-radius: 14px;
+  box-shadow: 0 5px 22px #182d1910; margin-bottom: 35px;
+}
+.fields {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 14px; align-items: end;
+}
+label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+input, select {
+  width: 100%; padding: 12px; border: 1px solid #d5ddd6;
+  border-radius: 8px; background: white; color: var(--ink);
+}
+button, .button {
+  display: inline-block; background: var(--green); color: white;
+  border: 0; border-radius: 8px; padding: 13px 18px;
+  cursor: pointer; text-decoration: none; font-weight: 700;
+}
+button:hover, .button:hover { background: #315f4b; }
+.rooms {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.room {
+  background: white; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 5px 22px #182d190b;
+}
+.room img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.room-content { padding: 18px; }
+.room h3 { margin: 0 0 10px; }
+.muted { color: #65736a; font-size: 14px; line-height: 1.6; }
+.price { font-size: 20px; font-weight: 800; color: var(--green); margin: 15px 0; }
+.notice { background: #f5f0e4; padding: 14px; border-radius: 8px; font-size: 13px; line-height: 1.6; }
+footer { background: #18372b; color: white; padding: 30px 7%; line-height: 1.8; }
+footer a { color: #e3c990; }
+@media(max-width:700px) {
+  .fields, .rooms { grid-template-columns: 1fr; }
+  .hero { padding-top: 45px; }
+  header { padding: 18px 5%; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">PR&A STAYS</div>
+  <a href="#rooms">Explore rooms ↓</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">YOUR HOME AWAY FROM HOME</div>
+    <h1>Stay comfortably.<br>Feel at home.</h1>
+    <p>Find a welcoming space for your next visit.
+       Explore our accommodations and plan your stay directly with PR&A STAYS.</p>
+    <a class="button" href="#booking">Plan your stay</a>
+  </div>
+</section>
+
+<main>
+  <section id="booking" class="search">
+    <h2>Find your stay</h2>
+    <p class="muted">Choose your dates to estimate your accommodation cost.</p>
+    <div class="fields">
+      <div>
+        <label for="checkin">Check-in</label>
+        <input id="checkin" type="date">
+      </div>
+      <div>
+        <label for="checkout">Check-out</label>
+        <input id="checkout" type="date">
+      </div>
+      <div>
+        <label for="guests">Guests</label>
+        <select id="guests">
+          <option value="1">1 guest</option>
+          <option value="2" selected>2 guests</option>
+          <option value="3">3 guests</option>
+          <option value="4">4 guests</option>
+          <option value="5">5 guests</option>
+        </select>
+      </div>
+    </div>
+    <p style="margin-bottom:0">
+      <button id="searchBtn" type="button">Calculate stay</button>
+    </p>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <section id="rooms">
+    <h2>Explore our rooms</h2>
+    <p class="muted">Comfortable spaces for your next trip.</p>
+    <div class="rooms">
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Comfortable bedroom">
+        <div class="room-content">
+          <h3>Cozy Room</h3>
+          <p class="muted">A welcoming space for solo travelers or couples.</p>
+          <div class="price">Set your rate</div>
+          <button type="button" onclick="chooseRoom('Cozy Room')">Select room</button>
+        </div>
+      </article>
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Modern apartment interior">
+        <div class="room-content">
+          <h3>Comfort Room</h3>
+          <p class="muted">A relaxing room for a comfortable visit.</p>
+          <div class="price">Set your rate</div>
+          <button type="button" onclick="chooseRoom('Comfort Room')">Select room</button>
+        </div>
+      </article>
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Bright living space">
+        <div class="room-content">
+          <h3>Premium Room</h3>
+          <p class="muted">Extra space to unwind during your stay.</p>
+          <div class="price">Set your rate</div>
+          <button type="button" onclick="chooseRoom('Premium Room')">Select room</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:35px">
+    <h2>Interested in staying with us?</h2>
+    <p class="muted">Our online booking and payment system is being prepared.
+       Availability and prices must be confirmed before a reservation is accepted.</p>
+    <div class="notice">
+      This is an initial website prototype. It does not yet reserve rooms,
+      process payments, or confirm availability. No payment should be sent
+      through this page.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>PR&A STAYS</strong><br>
+  Your home away from home.<br>
+  Philippines<br>
+  <span style="font-size:12px;color:#d5e0d7">
+    Contact information and property details will be added before launch.
+  </span>
+</footer>
+
+<script>
+const checkin = document.getElementById('checkin');
+const checkout = document.getElementById('checkout');
+const result = document.getElementById('result');
+const today = new Date();
+const localDate = d => {
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+};
+checkin.min = localDate(today);
+checkout.min = localDate(today);
+
+checkin.addEventListener('change', () => {
+  checkout.min = checkin.value || localDate(today);
+  if (checkout.value && checkout.value <= checkin.value) {
+    checkout.value = '';
+  }
+});
+
+function chooseRoom(name) {
+  result.innerHTML = '<p><strong>' + name +
+    '</strong> selected. Choose your dates and calculate your stay below.</p>';
+  document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+}
+
+document.getElementById('searchBtn').addEventListener('click', () => {
+  if (!checkin.value || !checkout.value || checkout.value <= checkin.value) {
+    result.textContent = 'Please select a valid check-in and check-out date.';
+    return;
+  }
+  const nights = Math.round(
+    (new Date(checkout.value+'T00:00:00') -
+     new Date(checkin.value+'T00:00:00')) / 86400000
+  );
+  result.textContent = `Your selected dates are ${nights} night(s). This prototype cannot yet verify room availability or calculate a confirmed total.`;
+});
+</script>
+</body>
+</html>
+
